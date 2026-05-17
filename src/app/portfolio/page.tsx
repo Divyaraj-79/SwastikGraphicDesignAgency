@@ -96,11 +96,17 @@ const portfolioItems = Object.entries(rawPortfolioData).flatMap(([category, file
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [displayLimit, setDisplayLimit] = useState(12);
 
   const filteredItems = useMemo(() => 
     portfolioItems.filter(
       (item) => activeCategory === "All" || item.category === activeCategory
     ), [activeCategory]
+  );
+
+  const displayedItems = useMemo(() => 
+    filteredItems.slice(0, displayLimit),
+    [filteredItems, displayLimit]
   );
 
   return (
@@ -124,13 +130,16 @@ export default function PortfolioPage() {
             A curated collection of industrial design, premium packaging, and corporate identity projects. Precision in every pixel, excellence in every print.
           </p>
         </motion.header>
-
+ 
         {/* Filters */}
         <div className="flex flex-wrap justify-start gap-4 mb-20 w-full sticky top-24 z-10 py-4 bg-background/80 backdrop-blur-md">
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => {
+                setActiveCategory(cat);
+                setDisplayLimit(12);
+              }}
               className={cn(
                 "group relative px-8 py-3 font-mono text-xs uppercase tracking-[0.2em] transition-all duration-500 overflow-hidden",
                 activeCategory === cat
@@ -150,11 +159,11 @@ export default function PortfolioPage() {
             </button>
           ))}
         </div>
-
+ 
         {/* Gallery */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] w-full">
           <AnimatePresence mode="popLayout">
-            {filteredItems.map((item, idx) => (
+            {displayedItems.map((item, idx) => (
               <motion.div
                 key={item.id}
                 layout
@@ -222,6 +231,18 @@ export default function PortfolioPage() {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Load More Button */}
+        {filteredItems.length > displayLimit && (
+          <div className="flex justify-center w-full mt-16">
+            <button
+              onClick={() => setDisplayLimit((prev) => prev + 12)}
+              className="px-12 py-5 border border-primary text-primary font-mono text-xs uppercase tracking-[0.25em] hover:bg-primary hover:text-on-primary transition-all duration-300 rounded shadow-lg shadow-primary/5 hover:shadow-primary/20"
+            >
+              Load More Projects [{filteredItems.length - displayLimit} Remaining]
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Lightbox */}
