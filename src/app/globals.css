@@ -3,7 +3,7 @@
 :root {
   --background: #131313;
   --foreground: #e2e2e2;
-  --primary: #ffb4a3;
+  --primary: #eb6420;
   --primary-container: #fa613f;
   --on-primary-container: #5b0d00;
   --surface: #131313;
@@ -26,7 +26,7 @@
   --color-surface-container-highest: var(--surface-container-highest);
   --color-on-surface-variant: var(--on-surface-variant);
   --color-outline-variant: var(--outline-variant);
-  
+
   --font-sora: "Sora", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-saira: "Saira", sans-serif;
@@ -45,18 +45,33 @@ body {
   overflow-x: hidden;
 }
 
-.font-sora { font-family: var(--font-sora); }
-.font-inter { font-family: var(--font-inter); }
-.font-saira { font-family: var(--font-saira); }
-.font-mono { font-family: var(--font-mono); }
+.font-sora {
+  font-family: var(--font-sora);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-saira {
+  font-family: var(--font-saira);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
 
 /* Custom Animations */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
-

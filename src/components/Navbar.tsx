@@ -33,12 +33,12 @@ export default function Navbar() {
   }, []);
 
   const menuVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       y: -20,
       clipPath: "inset(0% 0% 100% 0%)"
     },
-    visible: { 
+    visible: {
       opacity: 1,
       y: 0,
       clipPath: "inset(0% 0% 0% 0%)",
@@ -104,8 +104,8 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="hidden md:flex bg-primary-container text-on-primary-container font-saira font-semibold px-6 py-2 rounded-default items-center gap-2 group overflow-hidden relative"
           >
-            <span className="relative z-10 uppercase tracking-widest text-xs">Get Quote</span>
-            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+            <span className="relative z-10 uppercase tracking-widest text-xs" style={{ color: "#ffffff" }}>Get Quote</span>
+            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" style={{ color: "#ffffff" }} />
             <motion.div
               className="absolute inset-0 bg-surface-container-highest"
               initial={{ x: "-100%" }}
@@ -113,14 +113,14 @@ export default function Navbar() {
               transition={{ type: "tween", ease: "circOut" }}
             />
           </Link>
-          
+
           <button
             className="text-foreground hover:text-primary transition-colors flex items-center gap-3 font-mono text-xs uppercase tracking-widest"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className="hidden md:inline-block">{isOpen ? "Close" : "Menu"}</span>
-            <div className="p-2 bg-surface-container border border-outline-variant/30 rounded-full">
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            <span className="hidden md:inline-block" style={{ color: "#ffffff" }}>{isOpen ? "Close" : "Menu"}</span>
+            <div className="p-2 bg-surface-container border border-outline-variant/30 rounded-full" style={{ color: "#ffffff" }}>
+              {isOpen ? <X size={20} color="#ffffff" /> : <Menu size={20} color="#ffffff" />}
             </div>
           </button>
         </div>
@@ -141,7 +141,7 @@ export default function Navbar() {
               <div className="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center overflow-hidden">
                 <span className="font-sora text-[30vw] font-black whitespace-nowrap">SWASTIK</span>
               </div>
-              
+
               <div className="flex flex-col gap-2 md:gap-6 relative z-10">
                 {navLinks.map((link, idx) => (
                   <div key={link.name} className="overflow-hidden">
@@ -149,10 +149,10 @@ export default function Navbar() {
                       initial={{ y: "100%" }}
                       animate={{ y: "0%" }}
                       exit={{ y: "-100%" }}
-                      transition={{ 
-                        duration: 0.8, 
-                        delay: 0.2 + idx * 0.1, 
-                        ease: [0.16, 1, 0.3, 1] 
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.2 + idx * 0.1,
+                        ease: [0.16, 1, 0.3, 1]
                       }}
                     >
                       <Link
@@ -172,7 +172,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Info Sidebar */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
@@ -199,7 +199,7 @@ export default function Navbar() {
                   +91 76000 07625
                 </a>
               </div>
-              
+
               <div>
                 <span className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-6 block border-b border-outline-variant/20 pb-4">
                   Location

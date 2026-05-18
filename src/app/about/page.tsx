@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,15 +9,15 @@ import Marquee from "@/components/Marquee";
 import ClientMarquee from "@/components/ClientMarquee";
 import ParallaxImage from "@/components/ParallaxImage";
 import TextReveal from "@/components/TextReveal";
-import { 
-  CheckCircle2, 
-  Zap, 
-  Target, 
-  Users, 
-  Heart, 
-  Shield, 
-  Award, 
-  Rocket, 
+import {
+  CheckCircle2,
+  Zap,
+  Target,
+  Users,
+  Heart,
+  Shield,
+  Award,
+  Rocket,
   Layers,
   ChevronRight
 } from "lucide-react";
@@ -100,7 +100,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="pt-48 pb-24 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full flex flex-col items-start relative">
         <div className="absolute top-48 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-10" />
-        
+
         <motion.header
           initial="hidden"
           animate="visible"
@@ -113,19 +113,19 @@ export default function AboutPage() {
               Established 2015 • 9+ Years
             </span>
           </motion.div>
-          
+
           <div className="mb-10">
-            <TextReveal 
-              text="Architects of" 
+            <TextReveal
+              text="Architects of"
               className="font-sora text-5xl md:text-8xl font-extrabold text-foreground leading-none tracking-tighter"
             />
-            <TextReveal 
-              text="Visual Identity." 
+            <TextReveal
+              text="Visual Identity."
               className="font-sora text-5xl md:text-8xl font-extrabold text-primary/80 leading-none tracking-tighter"
               delay={0.3}
             />
           </div>
-          
+
           <motion.p variants={itemVariants} className="font-inter text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed text-left opacity-90">
             At Swastik Branding Agency, we believe that every brand has a story — and our passion is to transform that story into a powerful visual identity.
           </motion.p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
       {/* What We Do & Our Story */}
       <section className="py-32 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -159,8 +159,8 @@ export default function AboutPage() {
               />
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -191,10 +191,10 @@ export default function AboutPage() {
       {/* Mission & Vision */}
       <section className="py-32 bg-surface-container-lowest relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-outline-variant/20 hidden md:block" />
-        
+
         <div className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -209,7 +209,7 @@ export default function AboutPage() {
               </blockquote>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -279,7 +279,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 flex items-center justify-center -z-10 overflow-hidden">
           <span className="font-sora text-[25vw] font-black text-primary/[0.03] whitespace-nowrap select-none">EXPERIENCE</span>
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -293,17 +293,17 @@ export default function AboutPage() {
           <p className="font-inter text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed opacity-80">
             At Swastik Branding Agency, every project is handled with creativity, precision, and professionalism. Our mission is to help your business stand out and leave a lasting impression.
           </p>
-          
-          <Link 
+
+          <Link
             href="/contact"
             className="mt-20 inline-flex items-center gap-6 px-12 py-6 border-2 border-primary group hover:bg-primary transition-all cursor-pointer"
           >
-            <span className="font-sora font-black text-primary group-hover:text-primary-container text-xl uppercase tracking-widest">Let's Connect</span>
-            <motion.div 
+            <span className="font-sora font-black text-primary group-hover:text-primary-container text-xl uppercase tracking-widest" style={{ color: "#ffffff" }}>Let's Connect</span>
+            <motion.div
               animate={{ x: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              <ChevronRight className="w-6 h-6 text-primary group-hover:text-primary-container" />
+              <ChevronRight className="w-6 h-6 text-primary group-hover:text-primary-container" style={{ color: "#ffffff" }} />
             </motion.div>
           </Link>
         </motion.div>

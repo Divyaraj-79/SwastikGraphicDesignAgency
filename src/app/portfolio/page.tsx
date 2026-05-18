@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, color } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -79,15 +79,15 @@ const rawPortfolioData = {
   ]
 };
 
-const portfolioItems = Object.entries(rawPortfolioData).flatMap(([category, files]) => 
+const portfolioItems = Object.entries(rawPortfolioData).flatMap(([category, files]) =>
   files.map((file, index) => ({
     id: `${category}-${index}`,
     title: `${category} Project ${index + 1}`,
     category: category,
     image: `/portfolio/${category.toLowerCase().replace(" ", "-")}/${file}`,
     // Create a dynamic grid pattern, but keep logos consistent
-    span: category === "Highlight Logo" 
-      ? "md:col-span-4 row-span-1" 
+    span: category === "Highlight Logo"
+      ? "md:col-span-4 row-span-1"
       : index % 5 === 0 ? "md:col-span-8 row-span-2" : index % 3 === 0 ? "md:col-span-4 row-span-2" : "md:col-span-4 row-span-1"
   }))
 );
@@ -97,13 +97,13 @@ export default function PortfolioPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [displayLimit, setDisplayLimit] = useState(12);
 
-  const filteredItems = useMemo(() => 
+  const filteredItems = useMemo(() =>
     portfolioItems.filter(
       (item) => activeCategory === "All" || item.category === activeCategory
     ), [activeCategory]
   );
 
-  const displayedItems = useMemo(() => 
+  const displayedItems = useMemo(() =>
     filteredItems.slice(0, displayLimit),
     [filteredItems, displayLimit]
   );
@@ -120,8 +120,8 @@ export default function PortfolioPage() {
           className="mb-16 border-l-4 border-primary pl-8 py-4 w-full max-w-4xl text-left"
         >
           <div className="flex justify-start">
-            <TextReveal 
-              text="Portfolio." 
+            <TextReveal
+              text="Portfolio."
               className="font-sora text-6xl md:text-9xl font-extrabold text-primary mb-6 tracking-tighter text-left uppercase"
             />
           </div>
@@ -129,7 +129,7 @@ export default function PortfolioPage() {
             A curated collection of industrial design, premium packaging, and corporate identity projects. Precision in every pixel, excellence in every print.
           </p>
         </motion.header>
- 
+
         {/* Filters */}
         <div className="flex flex-wrap justify-start gap-4 mb-20 w-full sticky top-24 z-10 py-4 bg-background/80 backdrop-blur-md">
           {categories.map((cat) => (
@@ -144,7 +144,7 @@ export default function PortfolioPage() {
                 activeCategory === cat
                   ? "text-primary-container"
                   : "text-on-surface-variant hover:text-primary"
-              )}
+              )} style={{ color: '#ffffff' }}
             >
               <span className="relative z-10">{cat}</span>
               {activeCategory === cat && (
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
             </button>
           ))}
         </div>
- 
+
         {/* Gallery - Dynamic Masonry Layout */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 w-full">
           <AnimatePresence mode="popLayout">
@@ -169,8 +169,8 @@ export default function PortfolioPage() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-                transition={{ 
-                  duration: 0.7, 
+                transition={{
+                  duration: 0.7,
                   ease: [0.16, 1, 0.3, 1],
                   delay: idx * 0.02
                 }}
@@ -193,10 +193,10 @@ export default function PortfolioPage() {
                     )}
                   />
                 </div>
-                
+
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Borders for hover */}
                 <div className="absolute inset-0 border-2 border-primary scale-98 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
 
@@ -254,7 +254,7 @@ export default function PortfolioPage() {
                 quality={100}
               />
             </div>
-            <button 
+            <button
               className="absolute top-12 right-12 text-white/50 hover:text-white transition-colors z-20"
               onClick={() => setSelectedImage(null)}
             >
@@ -269,13 +269,13 @@ export default function PortfolioPage() {
         <div className="max-w-max-width mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="max-w-2xl text-center md:text-left">
-              <h2 className="font-sora text-4xl md:text-6xl font-black text-primary mb-6 leading-none uppercase italic">
+              <h2 className="font-sora text-4xl md:text-6xl font-black text-primary mb-6 leading-none uppercase italic" style={{ color: "#eb6420" }}>
                 Ready to elevate <br /> your brand?
               </h2>
               <p className="font-inter text-lg text-on-surface-variant/70 mb-8">
                 Let's discuss your next industrial printing or design project. Our team is ready to bring your vision to life.
               </p>
-              <button className="px-12 py-5 bg-primary text-primary-container font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-4 mx-auto md:mx-0">
+              <button className="px-12 py-5 bg-primary text-primary-container font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-4 mx-auto md:mx-0" style={{ color: "#ffffff" }}>
                 Start a Project <ArrowRight size={24} />
               </button>
             </div>
@@ -301,7 +301,7 @@ export default function PortfolioPage() {
       </section>
 
       <Footer />
-    </main>
+    </main >
   );
 }
 
