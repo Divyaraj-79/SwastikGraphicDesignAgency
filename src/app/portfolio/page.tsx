@@ -159,8 +159,8 @@ export default function PortfolioPage() {
           ))}
         </div>
  
-        {/* Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] w-full">
+        {/* Gallery - Dynamic Masonry Layout */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 w-full">
           <AnimatePresence mode="popLayout">
             {displayedItems.map((item, idx) => (
               <motion.div
@@ -172,50 +172,41 @@ export default function PortfolioPage() {
                 transition={{ 
                   duration: 0.7, 
                   ease: [0.16, 1, 0.3, 1],
-                  delay: idx * 0.02 // Reduced delay for smoother performance
+                  delay: idx * 0.02
                 }}
                 onClick={() => setSelectedImage(item.image)}
                 className={cn(
-                  item.span,
-                  "group relative overflow-hidden bg-surface-container border border-outline-variant/10 cursor-pointer",
-                  item.category === "Highlight Logo" && "bg-white/5"
+                  "break-inside-avoid mb-6 group relative overflow-hidden border border-outline-variant/10 cursor-pointer rounded shadow-md hover:shadow-xl transition-all duration-300",
+                  (item.category === "Highlight Logo" || item.category === "Logo Design")
+                    ? "bg-white"
+                    : "bg-surface-container"
                 )}
               >
-                {/* Optimized Image Component */}
-                <div className="relative w-full h-full">
-                  <Image
+                {/* Responsive Self-Scaling Image */}
+                <div className="relative w-full overflow-hidden">
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={idx < 6} // Prioritize first few images
                     className={cn(
-                      "transition-all duration-1000 group-hover:scale-110",
-                      item.category === "Highlight Logo" 
-                        ? "object-contain p-8 grayscale-0"
-                        : "object-cover grayscale group-hover:grayscale-0"
+                      "w-full h-auto transition-all duration-1000 group-hover:scale-105",
+                      (item.category === "Highlight Logo" || item.category === "Logo Design") ? "p-8" : "p-0"
                     )}
                   />
                 </div>
                 
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Borders for hover */}
-                <div className="absolute inset-0 border-2 border-primary scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+                <div className="absolute inset-0 border-2 border-primary scale-98 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
 
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                   <div className="flex justify-between items-end">
                     <div>
-                      <motion.span 
-                        className="inline-block px-3 py-1 mb-3 bg-primary text-primary-container font-mono text-[10px] uppercase tracking-widest"
-                      >
+                      <span className="inline-block px-3 py-1 bg-primary text-primary-container font-mono text-[10px] font-bold uppercase tracking-widest">
                         {item.category}
-                      </motion.span>
-                      <h3 className="font-sora text-xl md:text-2xl font-bold text-white mb-1">
-                        {item.title}
-                      </h3>
+                      </span>
                     </div>
                     <div className="bg-primary p-3 rounded-full translate-x-4 group-hover:translate-x-0 transition-transform duration-500">
                       <Maximize2 size={20} className="text-primary-container" />
