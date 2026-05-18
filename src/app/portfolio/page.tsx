@@ -18,7 +18,6 @@ const rawPortfolioData = {
   "Box Design": [
     "BOX DESIGN POST 001.jpg.jpeg", "BOX DESIGN POST 002.jpg.jpeg", "BOX DESIGN POST 003.jpg.jpeg",
     "BOX DESIGN POST 004.jpg.jpeg", "BOX DESIGN POST 005.jpg.jpeg", "BOX DESIGN POST 006.jpg.jpeg",
-    "BOX DESIGN POST 007.jpg.jpeg", "BOX DESIGN POST 008.jpg.jpeg", "BOX DESIGN POST 009.jpg.jpeg",
     "BOX DESIGN POST 010.jpg.jpeg", "BOX DESIGN POST 011.jpg.jpeg", "BOX DESIGN POST 012.jpg.jpeg",
     "BOX DESIGN POST 013.jpg.jpeg", "BOX DESIGN POST 014.jpg.jpeg", "BOX DESIGN POST 015.jpg.jpeg",
     "BOX DESIGN POST 016.jpg.jpeg", "BOX DESIGN POST 017.jpeg", "BOX DESIGN POST 018.jpeg",
@@ -44,7 +43,7 @@ const rawPortfolioData = {
     "H LOGO 17.png", "H LOGO 18.png", "H LOGO 19.png", "H LOGO 20.png", "H LOGO 21.png"
   ],
   "Logo Design": [
-    "2716ed8019bca326cbd2fe8a846dd6d9.jpg.jpeg", "298bd0ce2a00252dec8dbbe380ce5a0a.jpg.jpeg",
+    "298bd0ce2a00252dec8dbbe380ce5a0a.jpg.jpeg", "2716ed8019bca326cbd2fe8a846dd6d9.jpg.jpeg",
     "a1af96613fe2cd4007d9887accfb9fe0.jpg.jpeg", "ad6d291fd17256ef1b8e11f34cdd37e2.jpg.jpeg",
     "CLARA LOGO.jpg.jpeg", "d00050f58107e08effded8d714d9e244.jpg.jpeg",
     "db418bff8ff2bd38f4c0dc12e12861c7.jpg.jpeg", "dcd0e690226899869d443f963df06165.jpg.jpeg",
