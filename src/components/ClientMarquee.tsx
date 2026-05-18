@@ -62,7 +62,7 @@ export default function ClientMarquee() {
             {[...clientLogos, ...clientLogos].map((logo, index) => (
               <div 
                 key={index} 
-                className="w-48 h-32 md:w-64 md:h-40 flex-shrink-0 bg-surface-container-low border border-outline-variant/20 rounded-xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all duration-500 hover:border-primary/50 hover:bg-surface-container transition-colors group/item"
+                className="w-48 h-32 md:w-64 md:h-40 flex-shrink-0 bg-white border border-outline-variant/20 rounded-xl flex items-center justify-center p-8 transition-all duration-500 hover:border-primary/50 hover:scale-105 group/item shadow-sm hover:shadow-md"
               >
                 <div className="relative w-full h-full">
                   <Image
@@ -91,7 +91,7 @@ export default function ClientMarquee() {
             {[...clientLogos].reverse().concat([...clientLogos].reverse()).map((logo, index) => (
               <div 
                 key={index} 
-                className="w-48 h-32 md:w-64 md:h-40 flex-shrink-0 bg-surface-container-low border border-outline-variant/20 rounded-xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all duration-500 hover:border-primary/50 hover:bg-surface-container transition-colors group/item"
+                className="w-48 h-32 md:w-64 md:h-40 flex-shrink-0 bg-white border border-outline-variant/20 rounded-xl flex items-center justify-center p-8 transition-all duration-500 hover:border-primary/50 hover:scale-105 group/item shadow-sm hover:shadow-md"
               >
                 <div className="relative w-full h-full">
                   <Image
