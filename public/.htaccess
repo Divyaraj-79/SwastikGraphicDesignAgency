@@ -10,3 +10,20 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 # 4. Internally rewrite to the HTML file
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Prevent caching for HTML pages to ensure the browser always gets the latest JS chunk filenames
+<FilesMatch "\.(html|htm)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </IfModule>
+</FilesMatch>
+
+# Heavily cache static assets (JS, CSS, images, and fonts) since they contain unique hashes
+<FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </IfModule>
+</FilesMatch>
+

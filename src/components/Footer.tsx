@@ -20,7 +20,7 @@ export default function Footer() {
               Premium graphic design and branding solutions. Shaping visual identity through creative precision and high-fidelity print.
             </p>
           </div>
-          <p className="font-inter text-[10px] text-on-surface-variant/60 hidden md:block">
+          <p className="font-inter text-[10px] text-on-surface-variant/60 hidden md:block" suppressHydrationWarning>
             © {new Date().getFullYear()} Swastik Branding Agency.
           </p>
         </div>
