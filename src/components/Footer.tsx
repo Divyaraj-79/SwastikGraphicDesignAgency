@@ -9,10 +9,11 @@ export default function Footer() {
           <div>
             <Link href="/" className="relative h-12 w-48 block mb-6">
               <Image
-                src="/logo.png"
+                src="/swastik-logo-new.png"
                 alt="Swastik Branding Agency Logo"
                 fill
                 className="object-contain object-left"
+                sizes="(max-width: 768px) 192px, 256px"
               />
             </Link>
             <p className="font-inter text-xs text-on-surface-variant max-w-xs mb-8 leading-relaxed">
@@ -25,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className="col-span-1">
-          <h4 className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-8">
+          <h4 className="font-zt font-black text-xs text-primary uppercase tracking-[0.2em] mb-8">
             Navigation
           </h4>
           <ul className="space-y-4">
@@ -65,10 +66,10 @@ export default function Footer() {
         </div>
 
         <div className="col-span-1">
-          <h4 className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-8">
+          <h4 className="font-zt font-black text-xs text-primary uppercase tracking-[0.2em] mb-8">
             Working Hours
           </h4>
-          <ul className="space-y-3 font-mono text-[10px] text-on-surface-variant">
+          <ul className="space-y-3 font-zt font-medium text-[10px] text-on-surface-variant">
             <li className="flex flex-col">
               <span className="text-primary-fixed">MON - SAT</span>
               <span>09:00 AM - 01:00 PM</span>
@@ -82,7 +83,7 @@ export default function Footer() {
         </div>
 
         <div className="col-span-1">
-          <h4 className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-8">
+          <h4 className="font-zt font-black text-xs text-primary uppercase tracking-[0.2em] mb-8">
             Legal
           </h4>
           <ul className="space-y-4">
@@ -106,7 +107,7 @@ export default function Footer() {
         </div>
 
         <div className="col-span-1">
-          <h4 className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-8">
+          <h4 className="font-zt font-black text-xs text-primary uppercase tracking-[0.2em] mb-8">
             Support
           </h4>
           <ul className="space-y-4">

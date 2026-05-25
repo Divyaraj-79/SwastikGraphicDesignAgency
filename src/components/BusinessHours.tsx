@@ -45,7 +45,7 @@ export default function BusinessHours() {
         <div className="p-2 bg-primary/10 rounded border border-primary/20">
           <Clock size={18} className="text-primary" />
         </div>
-        <h3 className="font-mono text-[10px] text-primary uppercase tracking-[0.3em]">
+        <h3 className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em]">
           Operational Hours
         </h3>
       </div>
@@ -53,7 +53,7 @@ export default function BusinessHours() {
       <div className="space-y-6">
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center group">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">
+            <span className="font-zt font-black text-[10px] uppercase tracking-widest text-primary">
               Monday — Saturday
             </span>
             <div className="h-px flex-grow mx-4 bg-outline-variant/10 group-hover:bg-primary/20 transition-colors" />
@@ -69,11 +69,11 @@ export default function BusinessHours() {
         </div>
 
         <div className="flex justify-between items-center group opacity-60">
-          <span className="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">
+          <span className="font-zt font-medium text-[10px] uppercase tracking-widest text-on-surface-variant">
             Sunday
           </span>
           <div className="h-px flex-grow mx-4 bg-outline-variant/10" />
-          <span className="font-mono text-[10px] uppercase tracking-widest text-error font-black">
+          <span className="font-zt font-black text-[10px] uppercase tracking-widest text-error">
             Closed
           </span>
         </div>

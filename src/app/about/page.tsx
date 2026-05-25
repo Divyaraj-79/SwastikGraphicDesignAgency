@@ -180,7 +180,7 @@ export default function AboutPage() {
               {industries.map((ind, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 bg-surface-container-low border border-outline-variant/20 rounded">
                   <ChevronRight className="w-4 h-4 text-primary" />
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-on-surface">{ind}</span>
+                  <span className="font-zt font-medium text-[10px] uppercase tracking-widest text-on-surface">{ind}</span>
                 </div>
               ))}
             </div>

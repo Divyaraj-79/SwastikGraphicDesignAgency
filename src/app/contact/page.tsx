@@ -19,7 +19,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-start gap-8"
         >
-          <span className="font-mono text-xs text-primary-fixed uppercase tracking-[0.4em] border border-outline-variant px-6 py-3">
+          <span className="font-zt font-medium text-xs text-primary-fixed uppercase tracking-[0.4em] border border-outline-variant px-6 py-3">
             Connect
           </span>
           <h1 className="font-sora text-6xl md:text-9xl font-extrabold text-primary tracking-tighter leading-none">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-0 -top-6 text-[10px] font-mono text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
+                  className="absolute left-0 -top-6 text-[10px] font-zt font-medium text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
                 >
                   Full Name
                 </label>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 />
                 <label
                   htmlFor="email"
-                  className="absolute left-0 -top-6 text-[10px] font-mono text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
+                  className="absolute left-0 -top-6 text-[10px] font-zt font-medium text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
                 >
                   Email Address
                 </label>
@@ -86,7 +86,7 @@ export default function ContactPage() {
               />
               <label
                 htmlFor="company"
-                className="absolute left-0 -top-6 text-[10px] font-mono text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
+                className="absolute left-0 -top-6 text-[10px] font-zt font-medium text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
               >
                 Company / Organization
               </label>
@@ -102,7 +102,7 @@ export default function ContactPage() {
               />
               <label
                 htmlFor="message"
-                className="absolute left-0 -top-6 text-[10px] font-mono text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
+                className="absolute left-0 -top-6 text-[10px] font-zt font-medium text-on-surface-variant uppercase tracking-widest peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-primary-container transition-all pointer-events-none"
               >
                 Project Details
               </label>
@@ -135,7 +135,7 @@ export default function ContactPage() {
             {/* Top: Contact & Socials */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-6 border-b border-outline-variant/20 pb-2">
+                <h3 className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em] mb-6 border-b border-outline-variant/20 pb-2">
                   Direct Contact
                 </h3>
                 <div className="space-y-4">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                         {React.cloneElement(item.icon as React.ReactElement<any>, { size: 14 })}
                       </div>
                       <div className="min-w-0">
-                        <p className="font-mono text-[8px] text-on-surface-variant uppercase tracking-widest">{item.label}</p>
+                        <p className="font-zt font-medium text-[8px] text-on-surface-variant uppercase tracking-widest">{item.label}</p>
                         <a href={item.href} className="text-foreground text-xs font-bold hover:text-primary transition-colors block truncate">{item.val}</a>
                       </div>
                     </div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <h3 className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-4">Social Presence</h3>
+                <h3 className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em] mb-4">Social Presence</h3>
                 <div className="flex gap-2">
                   <a
                     href="https://www.instagram.com/swastik_branding_agency"
@@ -179,7 +179,7 @@ export default function ContactPage() {
 
             {/* Bottom: Location */}
             <div>
-              <h3 className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-4">Hub Location</h3>
+              <h3 className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em] mb-4">Hub Location</h3>
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-surface border border-outline-variant rounded">
                   <MapPin size={16} className="text-primary" />
@@ -218,7 +218,7 @@ export default function ContactPage() {
           className="absolute bottom-12 left-margin-mobile md:left-margin-desktop bg-surface-container-highest border border-primary p-8 shadow-2xl rounded-lg pointer-events-none"
         >
           <p className="font-saira font-bold text-primary uppercase tracking-[0.2em] mb-2">Designing Solution</p>
-          <p className="font-mono text-xs text-on-surface">Mon - Sat | 09:00 - 20:00 (IST)</p>
+          <p className="font-zt font-medium text-xs text-on-surface">Mon - Sat | 09:00 - 20:00 (IST)</p>
         </motion.div>
       </section>
 

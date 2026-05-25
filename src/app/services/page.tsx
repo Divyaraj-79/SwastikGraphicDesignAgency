@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import { ArrowRight, Zap, Newspaper, Briefcase, Layers } from "lucide-react"; // Using similar names or custom icons
 
 const services = [
@@ -14,6 +15,7 @@ const services = [
     icon: <DesignServicesIcon size={40} />,
     span: "md:col-span-8",
     image: null,
+    portfolioUrl: "/portfolio?category=Logo Design",
   },
   {
     title: "Packaging Design",
@@ -22,6 +24,7 @@ const services = [
     icon: <StorefrontIcon size={40} />,
     span: "md:col-span-4",
     image: null,
+    portfolioUrl: "/portfolio?category=Pouches",
   },
   {
     title: "Brochure & Catalogue",
@@ -30,6 +33,7 @@ const services = [
     icon: <FileTextIcon size={40} />,
     span: "md:col-span-4",
     image: null,
+    portfolioUrl: "/portfolio?category=Brochure",
   },
   {
     title: "Printing Solutions",
@@ -42,6 +46,7 @@ const services = [
       { label: "Marketing", value: "Flyers, Posters, Stickers" },
       { label: "Finish", value: "Matte / Gloss / Spot UV" },
     ],
+    whatsappUrl: "https://wa.me/918154958595?text=Hello%20Swastik%20Designs%2C%20I%20would%20like%20to%20get%20a%20quotation%20for%20Printing%20Solutions.%20Please%20share%20details.",
   },
   {
     title: "Flyer & Leaflet Design",
@@ -50,6 +55,7 @@ const services = [
     icon: <Newspaper size={40} />,
     span: "md:col-span-4",
     image: null,
+    portfolioUrl: "/portfolio?category=Flyer Design",
   },
   {
     title: "Office Stationery",
@@ -58,6 +64,7 @@ const services = [
     icon: <Briefcase size={40} />,
     span: "md:col-span-4",
     image: null,
+    portfolioUrl: "/portfolio?category=Rough Pad",
   },
   {
     title: "Sticker Designing",
@@ -66,6 +73,7 @@ const services = [
     icon: <Layers size={40} />,
     span: "md:col-span-4",
     image: null,
+    portfolioUrl: "/portfolio?category=Sticker Design",
   },
   {
     title: "Signage & 3D LED",
@@ -74,6 +82,7 @@ const services = [
     icon: <SignageIcon size={40} />,
     span: "md:col-span-7",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBYcA7XLXDrQggwfiv9M4tczdCx3ycHX41YQzl8jNILfjCuRytgo9DK1_xROG4pu6XMHWg7bwc1TWWaQ5zCsnAv9Dyaj6KxmFvnU1dnw1mywmKTRChZLV8aiaZBLfsv16upzw6EWKsDQPrfJpgGCa2ZfENsXJqo1mwJ3Ir73LAGj77vf1dYY4m5elmnwmtSIhkP1XGtc3DD08W29y0zdlmzjD_e7BogJlkIOTppv4PP0MLJLE1hm-vjmAy9MP3_GK6QGcJXj_MHvnzH",
+    whatsappUrl: "https://wa.me/918154958595?text=Hello%20Swastik%20Designs%2C%20I%20would%20like%20to%20get%20a%20quotation%20for%20Signage%20%26%203D%20LED%20services.%20Please%20share%20details.",
   },
   {
     title: "Corporate Gifting",
@@ -82,6 +91,7 @@ const services = [
     icon: <FeaturedSeasonalAndGiftsIcon size={40} />,
     span: "md:col-span-5",
     image: null,
+    whatsappUrl: "https://wa.me/918154958595?text=Hello%20Swastik%20Designs%2C%20I%20would%20like%20to%20get%20a%20quotation%20for%20Corporate%20Gifting%20products.%20Please%20share%20details.",
   },
   {
     title: "Digital Marketing",
@@ -90,6 +100,7 @@ const services = [
     icon: <Zap size={40} />,
     span: "md:col-span-12",
     image: null,
+    whatsappUrl: "https://wa.me/918154958595?text=Hello%20Swastik%20Designs%2C%20I%20would%20like%20to%20get%20a%20quotation%20for%20Digital%20Marketing%20services.%20Please%20share%20details.",
   },
 ];
 
@@ -170,16 +181,37 @@ export default function ServicesPage() {
                     </div>
                   )}
 
-                  <button className="inline-flex items-center gap-3 font-mono text-xs text-primary uppercase tracking-[0.2em] group/btn">
-                    View Case Studies 
-                    <motion.span 
-                      className="inline-block"
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
+                  {service.whatsappUrl ? (
+                    <a
+                      href={service.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-6 py-3 font-zt font-black text-xs text-white bg-primary hover:bg-primary-container uppercase tracking-[0.2em] transition-all rounded shadow-lg shadow-primary/20 hover:shadow-primary/45 active:scale-95 cursor-pointer mt-4"
                     >
-                      <ArrowRight size={14} />
-                    </motion.span>
-                  </button>
+                      Get Quotation 
+                      <motion.span 
+                        className="inline-block"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <ArrowRight size={14} />
+                      </motion.span>
+                    </a>
+                  ) : (
+                    <Link
+                      href={service.portfolioUrl || "/portfolio"}
+                      className="inline-flex items-center gap-3 font-zt font-black text-xs text-primary uppercase tracking-[0.2em] group/btn cursor-pointer border-b border-primary/20 pb-1 hover:border-primary transition-all duration-300 mt-4"
+                    >
+                      View Case Studies 
+                      <motion.span 
+                        className="inline-block"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <ArrowRight size={14} />
+                      </motion.span>
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.article>

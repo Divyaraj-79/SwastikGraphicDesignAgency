@@ -39,7 +39,7 @@ export default function ClientMarquee() {
             className="flex items-center gap-3"
           >
             <div className="w-12 h-[2px] bg-primary" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">Trusted Partners</span>
+            <span className="font-zt font-black text-[10px] uppercase tracking-[0.3em] text-primary">Trusted Partners</span>
           </motion.div>
           <h2 className="font-sora text-4xl md:text-6xl font-black text-foreground uppercase tracking-tighter">
             Our Valuable <span className="text-primary">Clients.</span>
@@ -70,6 +70,7 @@ export default function ClientMarquee() {
                     alt={`Client Logo ${index + 1}`}
                     fill
                     className="object-contain filter transition-all duration-500 group-hover/item:scale-110"
+                    sizes="(max-width: 768px) 192px, 256px"
                   />
                 </div>
               </div>
@@ -99,6 +100,7 @@ export default function ClientMarquee() {
                     alt={`Client Logo ${index + 1}`}
                     fill
                     className="object-contain filter transition-all duration-500 group-hover/item:scale-110"
+                    sizes="(max-width: 768px) 192px, 256px"
                   />
                 </div>
               </div>

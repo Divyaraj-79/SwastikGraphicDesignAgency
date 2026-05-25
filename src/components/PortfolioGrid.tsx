@@ -43,7 +43,7 @@ export default function PortfolioGrid() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-mono text-xs text-primary uppercase tracking-[0.3em] mb-4 block"
+              className="font-zt font-black text-xs text-primary uppercase tracking-[0.3em] mb-4 block"
             >
               Selected Works
             </motion.span>
@@ -91,7 +91,7 @@ export default function PortfolioGrid() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
               
               <div className="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="inline-block px-3 py-1 border border-primary-container text-primary-container font-mono text-[10px] uppercase tracking-widest mb-3 bg-background/80 backdrop-blur-sm">
+                <span className="inline-block px-3 py-1 border border-primary-container text-primary-container font-zt font-black text-[10px] uppercase tracking-widest mb-3 bg-background/80 backdrop-blur-sm">
                   {project.category}
                 </span>
                 <h3 className="font-sora text-2xl md:text-3xl text-foreground mb-2">
@@ -124,7 +124,7 @@ export default function PortfolioGrid() {
             <a
               href="/brochure/swastik-brochure.pdf"
               download="Swastik_Designs_Brochure.pdf"
-              className="font-mono text-xs text-primary uppercase tracking-widest inline-flex items-center gap-2 hover:text-primary-container transition-colors"
+              className="font-zt font-black text-xs text-primary uppercase tracking-widest inline-flex items-center gap-2 hover:text-primary-container transition-colors"
             >
               Download Brochure <ArrowRight size={14} />
             </a>

@@ -56,7 +56,7 @@ export default function TurnkeySection() {
             <span className="text-primary-container">
               <HubIcon size={20} />
             </span>
-            <span className="font-mono text-xs text-primary-container uppercase tracking-[0.2em]">
+            <span className="font-zt font-medium text-xs text-primary-container uppercase tracking-[0.2em]">
               Rajkot Creative Studio
             </span>
           </div>
@@ -93,12 +93,12 @@ export default function TurnkeySection() {
           >
             <h4 className="font-saira text-sm text-foreground mb-6 uppercase tracking-widest border-b border-outline-variant/50 pb-4 flex justify-between items-center">
               Execution Capabilities
-              <span className="font-mono text-[10px] text-primary-container">TECHNICAL SPECS V2.4</span>
+              <span className="font-zt font-black text-[10px] text-primary-container">TECHNICAL SPECS V2.4</span>
             </h4>
             
             <div className="space-y-6">
               {capabilities.map((cap, i) => (
-                <motion.div key={i} variants={listItem} className="grid grid-cols-3 gap-4 font-mono text-[11px] group">
+                <motion.div key={i} variants={listItem} className="grid grid-cols-3 gap-4 font-zt font-medium text-[11px] group">
                   <div className="text-primary group-hover:text-primary-container transition-colors uppercase">{cap.process}</div>
                   <div className="text-on-surface-variant/80 italic">{cap.materials}</div>
                   <div className="text-on-surface-variant text-right font-bold">{cap.dimensions}</div>
@@ -126,7 +126,7 @@ export default function TurnkeySection() {
               <MapPin size={24} />
             </div>
             <div>
-              <p className="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Creative Studio</p>
+              <p className="font-zt font-medium text-[10px] text-on-surface-variant uppercase tracking-widest">Creative Studio</p>
               <p className="font-sora text-sm font-bold text-primary">Rajkot, India</p>
             </div>
           </div>

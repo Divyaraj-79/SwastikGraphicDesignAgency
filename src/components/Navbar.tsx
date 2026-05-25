@@ -88,10 +88,11 @@ export default function Navbar() {
             className="relative w-full h-full"
           >
             <Image
-              src="/logo.png"
+              src="/swastik-logo-new.png"
               alt="Swastik Branding Agency Logo"
               fill
               className="object-contain object-left"
+              sizes="(max-width: 768px) 192px, 256px"
               priority
             />
           </motion.div>
@@ -115,7 +116,7 @@ export default function Navbar() {
           </Link>
 
           <button
-            className="text-foreground hover:text-primary transition-colors flex items-center gap-3 font-mono text-xs uppercase tracking-widest"
+            className="text-foreground hover:text-primary transition-colors flex items-center gap-3 font-zt font-medium text-xs uppercase tracking-widest"
             onClick={() => setIsOpen(!isOpen)}
           >
             <span className="hidden md:inline-block" style={{ color: "#ffffff" }}>{isOpen ? "Close" : "Menu"}</span>
@@ -189,7 +190,7 @@ export default function Navbar() {
               </div>
 
               <div className="mb-16">
-                <span className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-6 block border-b border-outline-variant/20 pb-4">
+                <span className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em] mb-6 block border-b border-outline-variant/20 pb-4">
                   Get in Touch
                 </span>
                 <a href="mailto:swastikbrandingagency@gmail.com" className="text-xl font-medium hover:text-primary transition-colors block mb-2">
@@ -201,7 +202,7 @@ export default function Navbar() {
               </div>
 
               <div>
-                <span className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-6 block border-b border-outline-variant/20 pb-4">
+                <span className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em] mb-6 block border-b border-outline-variant/20 pb-4">
                   Location
                 </span>
                 <p className="text-on-surface-variant leading-relaxed">

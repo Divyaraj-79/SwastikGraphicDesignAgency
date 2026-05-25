@@ -1,17 +1,59 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
 :root {
-  --background: #131313;
-  --foreground: #e2e2e2;
+  --background: #09090b;
+  --foreground: #f4f4f5;
   --primary: #eb6420;
-  --primary-container: #fa613f;
-  --on-primary-container: #5b0d00;
-  --surface: #131313;
-  --surface-container: #1f1f1f;
-  --surface-container-high: #2a2a2a;
-  --surface-container-highest: #353535;
-  --on-surface-variant: #e2bfb7;
-  --outline-variant: #5a413b;
+  --primary-container: #eb6420;
+  --on-primary-container: #ffffff;
+  --surface: #09090b;
+  --surface-container: #121214;
+  --surface-container-high: #1a1a1e;
+  --surface-container-highest: #242428;
+  --on-surface-variant: #a1a1aa;
+  --outline-variant: #27272a;
 }
 
 @theme inline {
@@ -30,6 +72,7 @@
   --font-sora: "Sora", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-saira: "Saira", sans-serif;
+  --font-zt: "ZT Nature", sans-serif;
   --font-mono: var(--font-mono), monospace;
 
   --border-radius-default: 0.125rem;
@@ -57,6 +100,10 @@ body {
   font-family: var(--font-saira);
 }
 
+.font-zt {
+  font-family: var(--font-zt);
+}
+
 .font-mono {
   font-family: var(--font-mono);
 }
@@ -74,4 +121,41 @@ body {
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+}
+
+/* Premium Slider custom classes */
+.text-outline {
+  -webkit-text-stroke: 1.5px var(--primary);
+  color: transparent;
+}
+
+.text-outline-white {
+  -webkit-text-stroke: 1.5px var(--foreground);
+  color: transparent;
+}
+
+.stroke-primary {
+  -webkit-text-stroke-color: var(--primary);
+}
+
+.stroke-primary-container {
+  -webkit-text-stroke-color: var(--primary-container);
+}
+
+/* Custom indicator animations */
+.bullet-dot {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bullet-dot:hover {
+  background-color: var(--primary);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
