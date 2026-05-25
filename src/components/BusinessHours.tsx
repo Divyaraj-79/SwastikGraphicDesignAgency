@@ -40,57 +40,52 @@ export default function BusinessHours() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex items-center gap-4 border-b border-outline-variant/20 pb-4">
-        <div className="p-2 bg-primary/10 rounded border border-primary/20">
-          <Clock size={18} className="text-primary" />
-        </div>
-        <h3 className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em]">
-          Operational Hours
-        </h3>
-      </div>
+    <div className="flex flex-col gap-4">
+      <h3 className="font-zt font-black text-[10px] text-primary uppercase tracking-[0.3em]">
+        Operational Hours
+      </h3>
       
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center group">
-            <span className="font-zt font-black text-[10px] uppercase tracking-widest text-primary">
+            <span className="font-zt font-black text-[9px] uppercase tracking-widest text-primary">
               Monday — Saturday
             </span>
             <div className="h-px flex-grow mx-4 bg-outline-variant/10 group-hover:bg-primary/20 transition-colors" />
           </div>
-          <div className="flex flex-col gap-1 pl-4 border-l-2 border-primary/20">
-            <span className="font-sora text-sm font-bold text-foreground uppercase tracking-tight">
+          <div className="flex flex-col gap-1 pl-4 border-l border-primary/20">
+            <span className="font-sora text-xs font-bold text-foreground uppercase tracking-tight">
               09:00 AM — 01:00 PM
             </span>
-            <span className="font-sora text-sm font-bold text-foreground uppercase tracking-tight">
+            <span className="font-sora text-xs font-bold text-foreground uppercase tracking-tight">
               03:00 PM — 08:00 PM
             </span>
           </div>
         </div>
 
         <div className="flex justify-between items-center group opacity-60">
-          <span className="font-zt font-medium text-[10px] uppercase tracking-widest text-on-surface-variant">
+          <span className="font-zt font-medium text-[9px] uppercase tracking-widest text-on-surface-variant">
             Sunday
           </span>
           <div className="h-px flex-grow mx-4 bg-outline-variant/10" />
-          <span className="font-zt font-black text-[10px] uppercase tracking-widest text-error">
+          <span className="font-zt font-black text-[9px] uppercase tracking-widest text-error">
             Closed
           </span>
         </div>
       </div>
       
-      <div className={`mt-2 flex items-center gap-3 py-3 px-4 rounded border transition-all duration-500 ${
+      <div className={`mt-1 flex items-center gap-3 py-2.5 px-4 rounded border transition-all duration-500 ${
         isOpen 
           ? "bg-primary/5 border-primary/20" 
           : "bg-error/5 border-error/20"
       }`}>
-        <div className={`w-2 h-2 rounded-full animate-pulse ${
-          isOpen ? "bg-green-500" : "bg-error"
+        <div className={`w-1.5 h-1.5 rounded-full ${
+          isOpen ? "bg-green-500 shadow-[0_0_8px_#22c55e]" : "bg-error shadow-[0_0_8px_var(--color-error)]"
         }`} />
-        <span className={`font-inter text-[10px] font-bold uppercase tracking-widest ${
+        <span className={`font-inter text-[9px] font-bold uppercase tracking-widest ${
           isOpen ? "text-primary" : "text-error"
         }`}>
-          Live Status: {isOpen ? "Currently Operational" : "Currently Closed"}
+          Live Status: {isOpen ? "Open Now" : "Closed Now"}
         </span>
       </div>
     </div>
