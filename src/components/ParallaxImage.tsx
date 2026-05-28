@@ -1,8 +1,7 @@
-"use client";
-
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface ParallaxImageProps {
   src: string;
@@ -22,12 +21,19 @@ export default function ParallaxImage({ src, alt, className, imageClassName }: P
 
   return (
     <div ref={ref} className={cn("overflow-hidden relative", className)}>
-      <motion.img
+      <motion.div
         style={{ y, scale: 1.2 }} // scale up to avoid seeing edges
-        src={src}
-        alt={alt}
-        className={cn("w-full h-full object-cover", imageClassName)}
-      />
+        className="absolute inset-0 w-full h-full"
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className={cn("object-cover", imageClassName)}
+          priority
+        />
+      </motion.div>
     </div>
   );
 }

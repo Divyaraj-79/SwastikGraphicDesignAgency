@@ -236,9 +236,13 @@ export default function PortfolioPage() {
               >
                 {/* Responsive Self-Scaling Image */}
                 <div className="relative w-full overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    width={800}
+                    height={800}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={idx < 4}
                     className={cn(
                       "w-full h-auto transition-all duration-1000 group-hover:scale-105",
                       (item.category === "Highlight Logo" || item.category === "Logo Design") ? "p-8" : "p-0"
